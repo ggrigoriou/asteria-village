@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://crqqx0qg0dr4q"]
+
+[ext_resource type="FontFile" uid="uid://bxpw5l4mhnxsp" path="res://assets/Font/PressStart2P-Regular.ttf" id="1_u7h1d"]
+[ext_resource type="Script" uid="uid://chlgpjwyeobr6" path="res://Levels/dialog.gd" id="1_y7muv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7muv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6957517, 0.6224877, 0.38724524, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_rs0pk"]
+font = ExtResource("1_u7h1d")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=656687285]
+script = ExtResource("1_y7muv")
+
+[node name="Panel" type="Panel" parent="." unique_id=1597269899]
+visible = false
+offset_right = 124.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7muv")
+
+[node name="Label" type="Label" parent="Panel" unique_id=303319105]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_rs0pk")
