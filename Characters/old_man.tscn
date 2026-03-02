@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://giryfr2jhuw8"]
+
+[ext_resource type="Texture2D" uid="uid://dub7s2y8fes1f" path="res://assets/Character/MinifolksHumans/Outline/MiniArchMage.png" id="1_tjsre"]
+[ext_resource type="PackedScene" uid="uid://cgftft5gsoyba" path="res://Interaction_components/interactable.tscn" id="2_mav4i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbtot"]
+atlas = ExtResource("1_tjsre")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mav4i"]
+atlas = ExtResource("1_tjsre")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed0tv"]
+atlas = ExtResource("1_tjsre")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1stap"]
+atlas = ExtResource("1_tjsre")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qql2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbtot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mav4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed0tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1stap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7r76a"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ed0tv"]
+radius = 7.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1423627848]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=870297020]
+sprite_frames = SubResource("SpriteFrames_qql2v")
+autoplay = "default"
+frame_progress = 0.32370564
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301022087]
+position = Vector2(1, 10)
+shape = SubResource("CircleShape2D_7r76a")
+
+[node name="Interactable" parent="." unique_id=1727326678 instance=ExtResource("2_mav4i")]
+collision_layer = 3
+collision_mask = 1
+interact_name = "Ask for some wheat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1474682042]
+position = Vector2(1, 10)
+shape = SubResource("CircleShape2D_ed0tv")
+
+[connection signal="body_entered" from="Interactable" to="Interactable" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactable" to="Interactable" method="_on_body_exited"]
