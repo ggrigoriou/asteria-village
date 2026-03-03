@@ -9,8 +9,8 @@ func _ready() -> void:
 		# optional: initial text
 		label.text = "Wheat: 0\nFlour: 0"
 
-func set_counts(wheat: int, flour: int) -> void:
+func set_counts(wheat: int, flour: int, coin: int) -> void:
 	if label == null:
 		push_warning("HUD: set_counts called but label is null.")
 		return
-	label.text = "Wheat: %d\nFlour: %d" % [wheat, flour]
+	label.text = "Wheat: %d\nFlour: %d\nCoin: %d" % [wheat, flour, coin]

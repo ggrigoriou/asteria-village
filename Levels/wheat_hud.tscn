@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c4gfpe68s7n15"]
+
+[ext_resource type="Texture2D" uid="uid://bmk1fut5nd5xb" path="res://assets/Village/farm/PNG/Supplies.png" id="1_uoxeq"]
+[ext_resource type="FontFile" uid="uid://bxpw5l4mhnxsp" path="res://assets/Font/PressStart2P-Regular.ttf" id="2_1t2mi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa0pv"]
+atlas = ExtResource("1_uoxeq")
+region = Rect2(256, 96, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoy2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa0pv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_thtlp"]
+base_font = ExtResource("2_1t2mi")
+
+[node name="Control" type="Control" unique_id=441918908]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.47854793, 0.47854793)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041988443]
+position = Vector2(-19, -9)
+scale = Vector2(2.3125, 2.3125)
+sprite_frames = SubResource("SpriteFrames_qoy2f")
+
+[node name="Label" type="Label" parent="." unique_id=1993369516]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -12.0
+offset_right = 60.0
+offset_bottom = 11.0
+theme_override_fonts/font = SubResource("FontVariation_thtlp")
+theme_override_font_sizes/font_size = 12
+text = "Wheat: "
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var hud := get_tree().current_scene.get_node_or_null("HUD")
 var wheat: int = 0
 var flour: int = 0
+var coin: int = 0
 
 func _ready():
 	update_animation_parameters(starting_direction)
@@ -57,9 +58,28 @@ func trade_wheat_for_flour(wheat_cost: int = 1, flour_gain: int = 1) -> bool:
 	_update_hud()
 	return true
 
+func trade_flour_for_coin(flour_cost: int = 1, coin_gain: int = 1) -> bool:
+	if flour < flour_cost:
+		print("NOT ENOUGH WHEAT: have=%d need=%d" % [flour, flour_cost])
+		print_inventory("trade_failed")
+		_update_hud()
+		return false
+
+	flour -= flour_cost
+	coin += coin_gain
+	print("TRADE OK: -%d flour, +%d coin" % [flour_cost, coin_gain])
+	print_inventory("trade_ok")
+	_update_hud()
+	return true
+
+func make_a_wish(amount: int) -> void:
+	coin -= amount
+	print_inventory("remove_coin(%d)" % amount)
+	_update_hud()
+
 func print_inventory(context: String = "") -> void:
-	print("INV %s -> wheat=%d, flour=%d" % [context, wheat, flour])
+	print("INV %s -> wheat=%d, flour=%d, coin=%d" % [context, wheat, flour, coin])
 
 func _update_hud() -> void:
 	if hud and hud.has_method("set_counts"):
-		hud.set_counts(wheat, flour)
+		hud.set_counts(wheat, flour, coin)
