@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://dybyyi144hcy3" path="res://Characters/wheat.gd" id="8_ese5x"]
 [ext_resource type="Script" uid="uid://dq25juy6ex7gg" path="res://Characters/flour.gd" id="10_3ty5n"]
 [ext_resource type="Script" uid="uid://co8cqa7fkjlk5" path="res://Levels/inventory_ui.gd" id="11_nxa8a"]
+[ext_resource type="Script" uid="uid://bvf5shp5j3eeb" path="res://Time/time_system.gd" id="12_ds5vk"]
+[ext_resource type="Script" uid="uid://di0r1ybowt8f4" path="res://Time/date_time.gd" id="13_um5wi"]
+[ext_resource type="Script" uid="uid://b254lj7j4y2gu" path="res://Time/directional_light_2d.gd" id="14_um5wi"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ese5x"]
 
@@ -29,6 +32,22 @@ texture = ExtResource("4_afl82")
 [sub_resource type="TileSet" id="TileSet_nxa8a"]
 sources/0 = SubResource("TileSetScenesCollectionSource_ese5x")
 sources/1 = SubResource("TileSetAtlasSource_3ty5n")
+
+[sub_resource type="Resource" id="Resource_alay0"]
+script = ExtResource("13_um5wi")
+metadata/_custom_type_script = "uid://di0r1ybowt8f4"
+
+[sub_resource type="Resource" id="Resource_0ooie"]
+script = ExtResource("13_um5wi")
+minutes = 30
+hours = 6
+metadata/_custom_type_script = "uid://di0r1ybowt8f4"
+
+[sub_resource type="Resource" id="Resource_jw0rm"]
+script = ExtResource("13_um5wi")
+minutes = 30
+hours = 19
+metadata/_custom_type_script = "uid://di0r1ybowt8f4"
 
 [node name="GameLevel" type="Node2D" unique_id=1636663693]
 y_sort_enabled = true
@@ -113,3 +132,19 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="HUD/PanelContainer" unique_id=866670515]
 layout_mode = 2
+
+[node name="TimeSystem" type="Node" parent="." unique_id=1682745151]
+script = ExtResource("12_ds5vk")
+date_time = SubResource("Resource_alay0")
+ticks_pr_second = 600
+metadata/_custom_type_script = "uid://bvf5shp5j3eeb"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1881740916 node_paths=PackedStringArray("time_system")]
+blend_mode = 2
+script = ExtResource("14_um5wi")
+day_color = Color(1, 1, 1, 1)
+night_color = Color(0.099428795, 0.19633472, 0.42046037, 1)
+day_start = SubResource("Resource_0ooie")
+night_start = SubResource("Resource_jw0rm")
+transition_time = 300
+time_system = NodePath("../TimeSystem")
