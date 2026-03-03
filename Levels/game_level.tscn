@@ -11,9 +11,14 @@
 [ext_resource type="Script" uid="uid://dybyyi144hcy3" path="res://Characters/wheat.gd" id="8_ese5x"]
 [ext_resource type="Script" uid="uid://dq25juy6ex7gg" path="res://Characters/flour.gd" id="10_3ty5n"]
 [ext_resource type="Script" uid="uid://co8cqa7fkjlk5" path="res://Levels/inventory_ui.gd" id="11_nxa8a"]
+[ext_resource type="PackedScene" uid="uid://b63bm6xfhdhw5" path="res://Levels/pigadi.tscn" id="12_0ooie"]
+[ext_resource type="Script" uid="uid://ctvr24o8gfdbp" path="res://Levels/well.gd" id="12_ah7re"]
 [ext_resource type="Script" uid="uid://bvf5shp5j3eeb" path="res://Time/time_system.gd" id="12_ds5vk"]
+[ext_resource type="PackedScene" uid="uid://d12jk5a6mtrij" path="res://Characters/coin_mage.tscn" id="13_jw0rm"]
 [ext_resource type="Script" uid="uid://di0r1ybowt8f4" path="res://Time/date_time.gd" id="13_um5wi"]
+[ext_resource type="Script" uid="uid://djfwheiwkxxrc" path="res://Characters/coin_mage.gd" id="14_6tkkn"]
 [ext_resource type="Script" uid="uid://b254lj7j4y2gu" path="res://Time/directional_light_2d.gd" id="14_um5wi"]
+[ext_resource type="FontFile" uid="uid://bxpw5l4mhnxsp" path="res://assets/Font/PressStart2P-Regular.ttf" id="16_6tkkn"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ese5x"]
 
@@ -32,6 +37,9 @@ texture = ExtResource("4_afl82")
 [sub_resource type="TileSet" id="TileSet_nxa8a"]
 sources/0 = SubResource("TileSetScenesCollectionSource_ese5x")
 sources/1 = SubResource("TileSetAtlasSource_3ty5n")
+
+[sub_resource type="FontVariation" id="FontVariation_2lq5e"]
+base_font = ExtResource("16_6tkkn")
 
 [sub_resource type="Resource" id="Resource_alay0"]
 script = ExtResource("13_um5wi")
@@ -116,6 +124,15 @@ position = Vector2(-24, 229)
 scale = Vector2(1.3583379, 1.3583379)
 script = ExtResource("10_3ty5n")
 
+[node name="well" parent="." unique_id=156615785 instance=ExtResource("12_0ooie")]
+position = Vector2(267, -69)
+script = ExtResource("12_ah7re")
+
+[node name="Coin Man" parent="." unique_id=955271510 instance=ExtResource("13_jw0rm")]
+position = Vector2(292.99994, -68.00006)
+scale = Vector2(1.24, 1.24)
+script = ExtResource("14_6tkkn")
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=676886320]
 script = ExtResource("11_nxa8a")
 
@@ -134,6 +151,8 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="HUD/PanelContainer" unique_id=866670515]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_2lq5e")
+theme_override_font_sizes/font_size = 6
 
 [node name="TimeSystem" type="Node" parent="." unique_id=1682745151]
 script = ExtResource("12_ds5vk")
