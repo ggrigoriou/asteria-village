@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c48vxsklsaj8o"]
 
-[ext_resource type="Script" uid="uid://k63lpu8bvj44" path="res://Levels/sign.gd" id="1_amop8"]
 [ext_resource type="Texture2D" uid="uid://c0j1jj1cms7nm" path="res://assets/Village/signboardsfree.png" id="1_oe03t"]
 [ext_resource type="PackedScene" uid="uid://cgftft5gsoyba" path="res://Interaction_components/interactable.tscn" id="3_04p4l"]
 
@@ -10,7 +9,6 @@
 radius = 14.035668
 
 [node name="Sign" type="StaticBody2D" unique_id=15394670]
-script = ExtResource("1_amop8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=407924624]
 shape = SubResource("CircleShape2D_nwyno")
@@ -21,7 +19,6 @@ texture = ExtResource("1_oe03t")
 hframes = 4
 
 [node name="Interactable" parent="." unique_id=1727326678 instance=ExtResource("3_04p4l")]
-interact_name = "Read Sign"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2075538979]
 shape = SubResource("CircleShape2D_ioj3d")

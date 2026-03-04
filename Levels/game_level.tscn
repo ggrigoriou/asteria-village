@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c48vxsklsaj8o" path="res://Levels/sign.tscn" id="4_ekbqq"]
 [ext_resource type="PackedScene" uid="uid://crqqx0qg0dr4q" path="res://Levels/dialog.tscn" id="5_ekbqq"]
 [ext_resource type="PackedScene" uid="uid://giryfr2jhuw8" path="res://Characters/old_man.tscn" id="6_34xkg"]
+[ext_resource type="Script" uid="uid://k63lpu8bvj44" path="res://Levels/sign.gd" id="6_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://biacjdsycgp2v" path="res://Characters/old-man-v2.tscn" id="7_xk4lf"]
 [ext_resource type="Script" uid="uid://dybyyi144hcy3" path="res://Characters/wheat.gd" id="8_ese5x"]
 [ext_resource type="Script" uid="uid://dq25juy6ex7gg" path="res://Characters/flour.gd" id="10_3ty5n"]
@@ -105,6 +106,7 @@ tile_set = ExtResource("2_wlvk4")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(158, 159)
+script = ExtResource("6_sf1a6")
 
 [node name="Overlay" type="TileMapLayer" parent="." unique_id=1286727977]
 y_sort_enabled = true
