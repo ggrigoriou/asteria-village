@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c472h4wdrs6c1"
-path="res://.godot/imported/GRASS DETAIL 5 - NIGHT.png-417aff15c9c7449b7ecc38f48c7f1b5e.ctex"
+uid="uid://bvxewvjr6yqtt"
+path="res://.godot/imported/Bee.png-35b0a76b62e875646ec6bcb514bc6e1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Village/GRASS DETAIL 5 - NIGHT.png"
-dest_files=["res://.godot/imported/GRASS DETAIL 5 - NIGHT.png-417aff15c9c7449b7ecc38f48c7f1b5e.ctex"]
+source_file="res://assets/Village/Bee.png"
+dest_files=["res://.godot/imported/Bee.png-35b0a76b62e875646ec6bcb514bc6e1d.ctex"]
 
 [params]
 

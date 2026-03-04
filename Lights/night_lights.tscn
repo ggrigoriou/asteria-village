@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bs5hlc74np6uc"]
+
+[ext_resource type="Script" uid="uid://crmxmgmwovgdl" path="res://Lights/night_lights.gd" id="1_4ighs"]
+[ext_resource type="Texture2D" uid="uid://cf7ryxtyj2u4b" path="res://assets/Village/lights.png" id="2_x5ji0"]
+
+[sub_resource type="Gradient" id="Gradient_x5ji0"]
+colors = PackedColorArray(0.86709017, 0.8670896, 1.540184e-06, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v2ya4"]
+gradient = SubResource("Gradient_x5ji0")
+fill = 1
+fill_from = Vector2(0.517094, 0.4957265)
+fill_to = Vector2(0.88461536, 0.14957266)
+
+[node name="NightLights" type="Node2D" unique_id=970364684]
+script = ExtResource("1_4ighs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235137662]
+texture = ExtResource("2_x5ji0")
+hframes = 6
+vframes = 5
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=346713304]
+position = Vector2(-2, 7)
+scale = Vector2(5, 5)
+texture = SubResource("GradientTexture2D_v2ya4")

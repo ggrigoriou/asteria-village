@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cabd06gn7o33q"
-path="res://.godot/imported/TREE 1 - NIGHT.png-8acd50d0869a7c6679f165256f12d52a.ctex"
+uid="uid://cf7ryxtyj2u4b"
+path="res://.godot/imported/lights.png-59f18e9db21cacc717408465d4c1ce72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Village/TREE 1 - NIGHT.png"
-dest_files=["res://.godot/imported/TREE 1 - NIGHT.png-8acd50d0869a7c6679f165256f12d52a.ctex"]
+source_file="res://assets/Village/lights.png"
+dest_files=["res://.godot/imported/lights.png-59f18e9db21cacc717408465d4c1ce72.ctex"]
 
 [params]
 
