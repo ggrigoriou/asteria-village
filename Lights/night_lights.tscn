@@ -12,7 +12,10 @@ fill = 1
 fill_from = Vector2(0.517094, 0.4957265)
 fill_to = Vector2(0.88461536, 0.14957266)
 
-[node name="NightLights" type="Node2D" unique_id=970364684]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5ji0"]
+size = Vector2(9, 20)
+
+[node name="NightLights" type="StaticBody2D" unique_id=1252904456]
 script = ExtResource("1_4ighs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235137662]
@@ -24,3 +27,7 @@ vframes = 5
 position = Vector2(-2, 7)
 scale = Vector2(5, 5)
 texture = SubResource("GradientTexture2D_v2ya4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834017949]
+position = Vector2(-2.5, 17)
+shape = SubResource("RectangleShape2D_x5ji0")

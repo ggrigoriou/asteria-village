@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cdtabcwnmoin8"]
+
+[ext_resource type="Texture2D" uid="uid://d1w50nx4v224t" path="res://assets/Village/lever1.png" id="1_6a24d"]
+[ext_resource type="Texture2D" uid="uid://bb4rukl5hnx6d" path="res://assets/Village/lever3.png" id="2_10nco"]
+[ext_resource type="Texture2D" uid="uid://bj7u3du6j505j" path="res://assets/Village/lever2.png" id="2_smlpt"]
+[ext_resource type="Script" uid="uid://bbk3hlo8cb7xn" path="res://Levels/interactable.gd" id="4_jgorf"]
+[ext_resource type="AudioStream" uid="uid://efj01w64y8s0" path="res://assets/SFX/bell.mp3" id="5_jgorf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgorf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6a24d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_10nco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_smlpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_10nco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_6a24d")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nm00"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_10nco"]
+radius = 15.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=352936958]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=362865171]
+sprite_frames = SubResource("SpriteFrames_jgorf")
+animation = &"new_animation"
+frame_progress = 0.79830265
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2021889644]
+position = Vector2(-1, 6)
+shape = SubResource("CircleShape2D_3nm00")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=678263941]
+script = ExtResource("4_jgorf")
+metadata/_custom_type_script = "uid://0v5qwusaljg0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=839104120]
+position = Vector2(-1, 6)
+shape = SubResource("CircleShape2D_10nco")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1825119258]
+stream = ExtResource("5_jgorf")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="Interactable" method="_on_animation_finished"]

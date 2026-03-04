@@ -6,9 +6,10 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var hud := get_tree().current_scene.get_node_or_null("HUD")
-var wheat: int = 0
-var flour: int = 0
-var coin: int = 0
+@onready var interactable: Interactable = $Interactable
+@export var wheat: int = 0
+@export var flour: int = 0
+@export var coin: int = 0
 
 func _ready():
 	update_animation_parameters(starting_direction)
