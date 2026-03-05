@@ -7,6 +7,9 @@ extends Node2D
 
 # A list of short, flavor-text wishes
 var wishes: Array[String] = [
+	# --- The "Main" Wish ---
+	"To pass this exam!!!", 
+	
 	# --- The "Classic" Wishes ---
 	"I want gold!", 
 	"Endless flour!", 
